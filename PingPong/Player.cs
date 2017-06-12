@@ -9,8 +9,16 @@ namespace PingPong
     class Player
     {
         private int score;
-        private int games;
-        private int username;
+        private int level;
+        private String username;
+
+        public Player(int score, int level, String username)
+        {
+            this.score = score;
+            this.level = level;
+            this.username = username;
+
+        }
 
     }
 }

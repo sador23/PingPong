@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PingPong
 {
     static class Program
@@ -14,9 +15,11 @@ namespace PingPong
         [STAThread]
         static void Main()
         {
+
+            Ball ball = new Ball();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(ball));
         }
     }
 }

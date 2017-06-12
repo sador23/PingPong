@@ -47,18 +47,18 @@ namespace PingPong
             ball.Location = new Point(this.x, this.y);
         }
 
-        public void CheckCollide(ProgressBar bar)
+        public void CheckCollide(ProgressBar bar, Player player)
         {
-            if (bar.Bounds.IntersectsWith(this.ball)) yDir = -yDir;
+            if (bar.Bounds.IntersectsWith(this.ball))
+            {
+                yDir = -yDir;
+                player.AddScore();
+            }
         }
 
         public Rectangle GetBall()
         {
             return this.ball;
         }
-
-        
-
-
     }
 }

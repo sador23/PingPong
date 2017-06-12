@@ -7,3 +7,4 @@ c:\users\sador23\documents\visual studio 2017\Projects\PingPong\PingPong\bin\Deb
 c:\users\sador23\documents\visual studio 2017\Projects\PingPong\PingPong\bin\Debug\PingPong.pdb
 c:\users\sador23\documents\visual studio 2017\Projects\PingPong\PingPong\obj\Debug\PingPong.exe
 c:\users\sador23\documents\visual studio 2017\Projects\PingPong\PingPong\obj\Debug\PingPong.pdb
+C:\Users\sador23\documents\visual studio 2017\Projects\PingPong\PingPong\obj\Debug\PingPong.Menu.resources

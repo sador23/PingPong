@@ -6,18 +6,39 @@ using System.Threading.Tasks;
 
 namespace PingPong
 {
-    class Player
+    public class Player
     {
         private int score;
         private int level;
         private String username;
 
-        public Player(int score, int level, String username)
+        public Player()
         {
-            this.score = score;
-            this.level = level;
+            this.score = 0;
+            this.level = 0;
+            this.username = "";
+
+        }
+
+        public void SetUsername(String username)
+        {
             this.username = username;
 
+        }
+
+        public void AddScore()
+        {
+            this.score++;
+        }
+
+        public int  GetScore()
+        {
+            return this.score;
+        }
+
+        public String GetUsername()
+        {
+            return this.username;
         }
 
     }

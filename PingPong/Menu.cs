@@ -12,9 +12,22 @@ namespace PingPong
 {
     public partial class Menu : Form
     {
-        public Menu()
+
+        private Player player;
+
+        public Menu(Player player)
         {
+            this.player = player;
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text != "")
+            {
+                player.SetUsername(textBox1.Text);
+                this.Close();
+            }
         }
     }
 }

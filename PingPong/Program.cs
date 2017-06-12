@@ -15,11 +15,12 @@ namespace PingPong
         [STAThread]
         static void Main()
         {
-
+            Player player = new Player();
             Ball ball = new Ball();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(ball));
+            Application.Run(new Menu(player));
+            Application.Run(new Form1(ball,player));
         }
     }
 }

@@ -17,7 +17,9 @@ namespace PingPong
     {
 
         private Ball ball;
+        private Player player;
         private Rectangle circle;
+        private bool isStopped;
 
         System.Windows.Forms.Timer t;
         private int x=20;
@@ -34,23 +36,42 @@ namespace PingPong
         
         void t_Tick(object sender, EventArgs e)
         {
+
+            score.Text = this.player.GetScore().ToString();
+            if (!isStopped)
+            {
+
+            
             this.ball.move();
-            this.ball.CheckCollide(progressBar1);
+            this.ball.CheckCollide(progressBar1, player);
             Invalidate();
+            }
             //if (progressBar.Value >= 100) t.Stop();
 
         }
 
-        public Form1(Ball ball)
+        public Form1(Ball ball, Player player)
         {
             this.ball = ball;
+            this.player = player;
             this.KeyPreview = true;
-            InitializeComponent();
+            this.isStopped = false;
             
+            InitializeComponent();
+            username.Text = this.player.GetUsername();
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyData == Keys.Escape) this.Close();
+            if (e.KeyData == Keys.Space) isStopped = !isStopped;
+
+            if (!isStopped)
+            {
+
+            
+
             if (progressBar1.Location.X > 1 && progressBar1.Location.X < (this.Size.Width/2)-15)
             {
             if(e.KeyData == Keys.Left)
@@ -67,12 +88,14 @@ namespace PingPong
                 if (progressBar1.Location.X < 2) progressBar1.Location = new Point(2, progressBar1.Location.Y);
                 else progressBar1.Location = new Point(130, progressBar1.Location.Y);
             }
+            }
 
 
         }
 
         void Form1_Load(object sender, System.EventArgs e)
         {
+            
             this.KeyPreview = true;
         }
 

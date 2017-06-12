@@ -43,14 +43,20 @@ namespace PingPong
 
             
             this.ball.move();
+                if(ball.IsOutOfGame())
+                {
+                    Program.FlipIsLost();
+                    this.Close();
+                }
             this.ball.CheckCollide(progressBar1, player);
+                if (ball.GetCurrent() == ball.GetDiff()) this.Close();
             Invalidate();
             }
             //if (progressBar.Value >= 100) t.Stop();
 
         }
 
-        public Form1(Ball ball, Player player)
+        public Form1(Ball ball, Player player, int level)
         {
             this.ball = ball;
             this.player = player;
@@ -59,12 +65,17 @@ namespace PingPong
             
             InitializeComponent();
             username.Text = this.player.GetUsername();
+            this.level.Text = level.ToString();
 
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Escape) this.Close();
+            if (e.KeyData == Keys.Escape)
+            {
+                Program.FlipIsLost();
+                this.Close();
+            }
             if (e.KeyData == Keys.Space) isStopped = !isStopped;
 
             if (!isStopped)

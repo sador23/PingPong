@@ -83,7 +83,7 @@ namespace PingPong
 
             
 
-            if (progressBar1.Location.X > 1 && progressBar1.Location.X < (this.Size.Width/2)-15)
+            if (progressBar1.Location.X > 1 && progressBar1.Location.X < (this.Size.Width/2))
             {
             if(e.KeyData == Keys.Left)
             {
